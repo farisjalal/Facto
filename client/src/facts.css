@@ -1,0 +1,65 @@
+.fact {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    background-color: #3a3f4a;
+  }
+  
+ 
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  
+  img {
+    max-width: 100%
+  }
+  
+  .image {
+    flex-basis: 60%
+  }
+  
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+  .text span {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+  }
+
+
+
+
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 26px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  

@@ -1,7 +1,10 @@
 
+import { listenerCount } from "events";
 import React from "react";
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
+import "./facts.css";
+import Navbar from "./Navbar";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -9,14 +12,22 @@ function App() {
   React.useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data));
   }, []);
 
   return (
     <div className="App">
+      <Navbar/>
       <header className="App-header">
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
-        <p>{!data ? "Loading..." : data}</p>
+        {!data ? "Loading..." : data.info.map((fact)=>(
+          <div className="fact">            
+            <div class="fact"><span>{fact.factText.substring(0,4)}</span></div>
+              <div class="container">              
+                <div class="text"><span>{fact.factText.substring(4)}</span></div>
+                <div class="image"><img src={fact.imageUrl}/></div>
+              </div>            
+          </div>          
+        ))}
       </header>
     </div>
   );
