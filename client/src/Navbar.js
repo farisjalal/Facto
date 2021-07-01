@@ -32,7 +32,7 @@ function Navbar(props) {
         <button class="ARROW_BUTTON" onClick={props.dateIncr}>
           &gt;
         </button>
-        <a href="#news">Notable events in history</a>
+        <a href="">Notable events in history</a>
       </div>
     </nav>
   );
