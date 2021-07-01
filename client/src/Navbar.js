@@ -1,26 +1,41 @@
-import React from 'react';
-import "./facts.css"
+import React from "react";
+import "./facts.css";
 
+function formatDate(date) {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-function currentDate(){
-    var today = new Date();
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    var date = today.getDate()+' '+months[today.getMonth()];
-    return date
+  var formattedDate = date.getDate() + " " + months[date.getMonth()];
+  return formattedDate;
 }
 
-function Navbar(){
-    return(
-    <nav>        
-        <div class="topnav">
-        <button class="ARROW_BUTTON" >&lt;</button>
-            <a class="active" >{currentDate()}</a>
-            <button class="ARROW_BUTTON" >&gt;</button>
-            <a href="#news">Notable events in history</a>            
-        </div>
+function Navbar(props) {
+  return (
+    <nav>
+      <div class="topnav">
+        <button class="ARROW_BUTTON" onClick={props.dateDecr}>
+          &lt;
+        </button>
+        <a class="active">{formatDate(props.displayDate)}</a>
+        <button class="ARROW_BUTTON" onClick={props.dateIncr}>
+          &gt;
+        </button>
+        <a href="#news">Notable events in history</a>
+      </div>
     </nav>
-    );
+  );
 }
 
 export default Navbar;

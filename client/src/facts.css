@@ -1,92 +1,85 @@
 .fact {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #bbb;
-    background-color: #3a3f4a;
-  }
-  
- 
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  background-color: #3a3f4a;
+}
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center
-  }
-  
-  img {
-    max-width: 100%
-  }
-  
-  .image {
-    flex-basis: 60%
-  }
-  
-  .text {
-    font-size: 20px;
-    padding-left: 20px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .text span {
-    font-size: 1.2em;
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-  }
+img {
+  max-width: 100%;
+}
 
+.image {
+  flex-basis: 60%;
+}
 
+.text {
+  font-size: 20px;
+  padding-left: 20px;
+}
 
+.text span {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+}
 
-  .topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    color: #f2f2f2;
-    text-align: start;
-    padding: 14px 40px;
-    text-decoration: none;
-    font-size: 26px;
-    float: left;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-  }
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
 
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: #f2f2f2;
+  text-align: start;
+  padding: 14px 40px;
+  text-decoration: none;
+  font-size: 26px;
+  float: left;
+}
 
-  /* Next/Prev day arrow button */
-  .ARROW_BUTTON {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    color: #FFFFFF;
-    font-size: 26px;
-    font-weight: 100;
-    padding: 16px 16px;
-    background-color: #04AA6D;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    border: none;
-    outline:none;
-    position:unset;
-    float: left;
-  }
- 
- .ARROW_BUTTON:hover {
-    background: rgba(4, 170, 109, 0.93);
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    text-decoration: none;
- }
-  
+/* Change the color of links on hover */
+.topnav a:hover {
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+}
+
+/* Next/Prev day arrow button */
+.ARROW_BUTTON {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 100;
+  padding: 16px 16px;
+  background-color: #04aa6d;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  outline: none;
+  position: unset;
+  float: left;
+}
+
+.ARROW_BUTTON:hover {
+  background: rgba(4, 170, 109, 0.93);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  text-decoration: none;
+}

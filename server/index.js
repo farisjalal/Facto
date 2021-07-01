@@ -22,8 +22,7 @@ const getData = async (date) => {
    const factText = titleNode.text();
    if(factText.search("divorce")==-1 && factText.search("weds")==-1 && factText.search("marries")==-1){
     const imageUrl=await getImageInfo(factText);
-    factList.push({i,factText,imageUrl});    
-    console.log(factList.length); 
+    factList.push({i,factText,imageUrl});
    }   
   });
 
@@ -38,7 +37,7 @@ const getData = async (date) => {
 }
 
 const getImageInfo = async (searchTerm) => {
-	const response = await fetch('https://www.google.com/search?tbm=isch&q='+searchTerm);
+	const response = await fetch(encodeURI('https://www.google.com/search?tbm=isch&q='+searchTerm));
 	const body = await response.text(); 
   return(getImageUrl(body))	
 };
