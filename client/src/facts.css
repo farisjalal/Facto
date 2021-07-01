@@ -42,24 +42,51 @@
   
   /* Style the links inside the navigation bar */
   .topnav a {
-    float: left;
     color: #f2f2f2;
-    text-align: center;
+    text-align: start;
     padding: 14px 40px;
     text-decoration: none;
     font-size: 26px;
+    float: left;
   }
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
-    color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
     color: white;
+    padding: 14px 20px;
   }
 
+
+  /* Next/Prev day arrow button */
+  .ARROW_BUTTON {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 100;
+    padding: 16px 16px;
+    background-color: #04AA6D;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    outline:none;
+    position:unset;
+    float: left;
+  }
+ 
+ .ARROW_BUTTON:hover {
+    background: rgba(4, 170, 109, 0.93);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    text-decoration: none;
+ }
   

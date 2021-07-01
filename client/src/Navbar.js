@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./facts.css"
 
 
@@ -11,15 +11,12 @@ function currentDate(){
 }
 
 function Navbar(){
-
-    
-
-
-
     return(
     <nav>        
         <div class="topnav">
-            <a class="active" href="#home">{currentDate()}</a>
+        <button class="ARROW_BUTTON" >&lt;</button>
+            <a class="active" >{currentDate()}</a>
+            <button class="ARROW_BUTTON" >&gt;</button>
             <a href="#news">Notable events in history</a>            
         </div>
     </nav>

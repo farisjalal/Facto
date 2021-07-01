@@ -7,13 +7,19 @@ import "./facts.css";
 import Navbar from "./Navbar";
 
 function App() {
+  const [date, setDate] = React.useState(new Date());
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch(`/api?date=${encodeURIComponent(date)}`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+
+      // await new Promise(resolve => setTimeout(resolve, 10000));
+      // newDate = new Date(Date.now() + 5 * 86400000);
+      // console.log(newDate);
+
+  }, [date]);
 
   return (
     <div className="App">

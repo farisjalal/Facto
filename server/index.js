@@ -10,13 +10,32 @@ const DOMParser = require("dom-parser");
 var parser = new DOMParser();
 
 const cheerio = require('cheerio');
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+const getData = async (date) => {
+	const response = await fetch(`https://www.onthisday.com/day/${months[date.getMonth()]}/${date.getDate()}`);
+  const $ = cheerio.load(await response.text());
+  factList=[]
 
-const getData = async () => {
-	const response = await fetch('https://www.onthisday.com/');
-	const body = await response.text();
-	return body;
-};
+  $('.event').each(async (i, title) => {
+   const titleNode = $(title);
+   const factText = titleNode.text();
+   if(factText.search("divorce")==-1 && factText.search("weds")==-1 && factText.search("marries")==-1){
+    const imageUrl=await getImageInfo(factText);
+    factList.push({i,factText,imageUrl});    
+    console.log(factList.length); 
+   }   
+  });
+
+  // Currently has issues with waiting for '.each()' 's subfunction
+  // To perform factList.push before getting here, hence temporary fix of waiting
+  await new Promise(resolve => setTimeout(resolve, 4000));
+
+  // console.log(factList.length)
+
+  
+  return factList;
+}
 
 const getImageInfo = async (searchTerm) => {
 	const response = await fetch('https://www.google.com/search?tbm=isch&q='+searchTerm);
@@ -36,35 +55,14 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 (async () => {
-  var info = await getData()
-  //console.log(info)
-  const $ = cheerio.load(info)
-  //yearList=[]
-  factList=[]
-
-  $('.event').each(async(i, title) => {
-   const titleNode = $(title);
-   const factText = titleNode.text();
-   if(factText.search("divorce")==-1 && factText.search("weds")==-1 && factText.search("marries")==-1){
-    const imageUrl=await getImageInfo(factText); 
-    //console.log({i,factText,imageUrl}) 
-    factList.push({i,factText,imageUrl});    
-   }   
-  });
-
-
-  console.log(factList.length)
-
-  for(var i = 0; i < factList.length ; i++){ 
-   console.log(factList[i].imageUrl);
-   console.log("\n\n")
-   }
+  
 
 
 
 
   
-  app.get("/api", (req, res) => {
+  app.get("/api", async (req, res) => {
+    factList = await getData(new Date(req.query.date));
     res.json({ message: "hi", info: factList });
   });
     
