@@ -21,11 +21,14 @@ function App() {
 
   }, [date]);
 
+  // Sorting Logic inspired by : https://stackoverflow.com/a/43572944
+  // Change '>' to '<' to reverse
+
   return (
     <div className="App">
       <Navbar/>
       <header className="App-header">
-        {!data ? "Loading..." : data.info.map((fact)=>(
+        {!data ? "Loading..." : [].concat(data.info).sort((a,b) => parseInt(a.factText.substring(0,4)) > parseInt(b.factText.substring(0,4)) ? 1 : -1 ).map((fact)=>(
           <div className="fact">            
             <div class="fact"><span>{fact.factText.substring(0,4)}</span></div>
               <div class="container">              
